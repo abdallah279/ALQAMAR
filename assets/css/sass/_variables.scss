@@ -1,0 +1,81 @@
+$ltr: 'html[lang="en"]';
+$rtl: 'html[lang="ar"]';
+/*********************************************************
+  // global color variables
+**********************************************************/
+
+// colors
+$main: #213f7d;
+$bink: #2bc3f2;
+$sec: #2e60a9;
+$white: #fff;
+$white2: #5A5E5E;
+$white3: #fafafa;
+$black: #000;
+$black2: #1c1c1b;
+$dark: #101112;
+$light: #f6f6f8;
+$red: #d93f21;
+$orange: #46ab4d;
+// $dark2: #302F2F;
+// $blue: #2D2E83;
+// $blue2: #1D71B8;
+// $green: #A26F2D;
+// $yellow: #C49E58;
+// $yellow2: #DDAD16;
+// $black2: #161616;
+// $black3: #7b7b7b;
+// $light2: #EEECE6;
+// $light3: #89877e;
+// $light4: #F5F5F5;
+// $light5: #6c757d;
+$border-color: #D7D8D6;
+$placholder-color: #adabab;
+$icon-color: #b1b0b0;
+$side-color: #939393;
+$text-color: #878A8F;
+// $gold: #FAEA9C;
+// $gold2: #FFC107;
+// $gold3: #FECC2F;
+$main-shadow: 0 5px 20px rgba($color: #000000, $alpha: .15);
+$sec-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$side-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+$nav-shadow: 0 3px 16px rgb(133 133 133 / 5%);
+$text-shadow: 0 2px 2px
+  rgba(
+    $color: $dark,
+    $alpha: 0.1,
+  );
+$img-shadow: 0 4px 4px 0
+  rgba(
+    $color: #000000,
+    $alpha: 25%,
+  );
+$main-transition: all 0.3s ease-in-out;
+
+/*********************************************************
+  // Font variables
+**********************************************************/
+
+$font-normal: "HSDream-Light", sans-serif, "Font Awesome 5 Free";
+
+/*********************************************************
+  // spacing variables
+**********************************************************/
+// these variable/s is still not applied on all elements
+
+$space-between: 20px;
+$spacer: 10px;
+
+/*********************************************************
+  // screens
+**********************************************************/
+$screen-xxl: 1720px;
+$screen-xx: 1600px;
+$screen-xl: 1280px;
+$screen-lg2: 1200px;
+$screen-lg: 992px;
+$screen-md: 768px;
+$screen-sm: 576px;
+$screen-xs: 425px;
+$screen-xxs: 375px;

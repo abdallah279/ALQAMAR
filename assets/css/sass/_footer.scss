@@ -1,0 +1,212 @@
+.footer {
+  padding: 120px 0;
+  background-color: $black;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (max-width: $screen-lg) {
+    padding: 70px 0;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    padding: 50px 0;
+  }
+
+  .blur_logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    max-width: 550px;
+    height: 100%;
+    z-index: -1;
+
+    @media screen and (max-width: $screen-md) {
+      max-width: 100%;
+    }
+  }
+
+  .footer-content {
+    .footer-head {
+      margin-bottom: 20px;
+      font-size: 17px;
+      color: $white;
+      font-weight: bold;
+      position: relative;
+      width: fit-content;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 16px;
+      }
+    }
+
+    .footer-info {
+      font-size: 15px;
+      color: $white;
+      line-height: 1.8;
+      font-weight: 300;
+
+      &.sm {
+        font-size: 13px;
+      }
+    }
+
+    .footer-links-con {
+      display: flex;
+      align-items: start;
+      gap: 30px;
+    }
+
+    .footer-links {
+      .link {
+        display: block;
+        margin-bottom: 10px;
+        width: fit-content;
+        color: $white;
+        font-weight: light;
+        transition: $main-transition;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+          #{$ltr} & {
+            transform: translateX(5px);
+          }
+          #{$rtl} & {
+            transform: translateX(-5px);
+          }
+          // color: $main;
+        }
+
+        @media screen and (max-width: $screen-md) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .right,
+    .left,
+    .center {
+      flex-shrink: 0;
+    }
+
+    .center-con {
+      @media screen and (max-width: $screen-lg) {
+        order: -1;
+      }
+    }
+
+    .center {
+      width: 475px;
+      text-align: center;
+      margin: auto;
+
+      @media screen and (max-width: $screen-sm) {
+        text-align: start;
+        width: fit-content;
+      }
+
+      .logo {
+        max-width: 160px;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: $screen-sm) {
+          max-width: 130px;
+        }
+      }
+    }
+
+    .left {
+      text-align: center;
+
+      @media screen and (max-width: $screen-sm) {
+        text-align: start;
+      }
+
+      .social-con {
+        @include center;
+        gap: 10px;
+        margin: 12px 0;
+
+        @media screen and (max-width: $screen-sm) {
+          justify-content: start;
+        }
+
+        .name {
+          color: $white;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: capitalize;
+          transition: $main-transition;
+
+          @media screen and (max-width:$screen-xs) {
+            font-size: 16px;
+          }
+        }
+
+        .social {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .ic {
+          font-size: 14px;
+          color: $white;
+          max-width: 16px;
+          max-height: 14px;
+          transition: $main-transition;
+        }
+      }
+
+      .whatsapp-ic {
+        @include center;
+        gap: 12px;
+
+        @media screen and (max-width: $screen-sm) {
+          justify-content: start;
+        }
+
+        .num {
+          font-size: 22px;
+          color: $white;
+          font-weight: bold;
+
+          @media screen and (max-width: $screen-xs) {
+            font-size: 16px;
+          }
+        }
+
+        .ic {
+          max-width: 22px;
+
+          @media screen and (max-width: $screen-xs) {
+            max-width: 18px;
+          }
+        }
+      }
+
+      a {
+        line-height: 0;
+      }
+    }
+  }
+}
+
+.copy-right {
+  @include center;
+  padding: 15px;
+  background-color: $white;
+  font-size: 15px;
+  color: $black;
+  gap: 3px;
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .name {
+    font-weight: bolder;
+  }
+}

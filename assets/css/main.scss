@@ -1,0 +1,347 @@
+@import "sass/variables", "sass/mixins", "sass/global", "sass/components",
+  "sass/navbar", "sass/footer";
+/********************* Start Slider section *********************/
+
+.home-sec {
+  .home-item {
+    position: relative;
+    height: calc(100vh - 82px);
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $screen-lg) {
+      height: calc(100vh - 70px);
+    }
+
+    // @media screen and (max-width: $screen-sm) {
+    //   height: 200px;
+    // }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      z-index: -1;
+    }
+
+    .home-img {
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+    }
+
+    .content {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      @media screen and (max-width: $screen-sm) {
+        width: 100%;
+      }
+
+      .title {
+        font-size: 24px;
+        color: $white;
+
+        @media screen and (max-width: $screen-sm) {
+          font-size: 22px;
+        }
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 20px;
+        }
+      }
+
+      .desc {
+        font-size: 16px;
+        color: $white;
+
+        @media screen and (max-width: $screen-xs) {
+          font-size: 15px;
+        }
+      }
+
+      .main-btn {
+        width: fit-content;
+      }
+    }
+  }
+
+  .owl-dots {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include center;
+    gap: 7px;
+
+    .owl-dot {
+      margin-top: 25px;
+      @include circle(10px);
+      background-color: $white !important;
+      opacity: 0.5;
+      transition: $main-transition;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/********************* End Slider section *********************/
+
+/********************* Start principles section *********************/
+
+.principles-cards {
+  .principle-card {
+    position: relative;
+    padding: 35px 20px;
+    text-align: center;
+    background-color: rgba($color: $bink, $alpha: 0.1);
+
+    @media screen and (max-width: $screen-md) {
+      padding: 35px 15px;
+    }
+
+    .prin-name {
+      font-size: 20px;
+      color: $black;
+      margin-bottom: 18px;
+    }
+
+    .prin-desc {
+      font-size: 16px;
+      color: $main;
+      line-height: 2;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: rgba($color: $bink, $alpha: 0.2);
+      width: 100px;
+      height: 6px;
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      top: -3px;
+    }
+
+    &::before {
+      bottom: -3px;
+    }
+  }
+}
+
+/********************* End principles section *********************/
+
+/********************* Start services section *********************/
+.services-slider {
+  position: relative;
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include circle(40px);
+    border: 1px solid $sec !important;
+    background-color: $sec !important;
+    color: $white !important;
+    @include center;
+
+    @media screen and (max-width: $screen-sm) {
+      display: none !important;
+    }
+  }
+
+  .owl-prev {
+    right: -55px;
+  }
+
+  .owl-next {
+    left: -55px;
+  }
+}
+
+.services-card {
+  border-radius: 15px;
+  overflow: hidden;
+  display: block;
+  background-color: rgba($color: $white, $alpha: 1);
+  position: relative;
+  box-shadow: $main-shadow;
+
+  .img {
+    position: relative;
+
+    > img:first-child {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+
+  .services-img {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include circle(60px !important);
+    overflow: hidden;
+    z-index: 8;
+    object-fit: cover;
+    border: 3px solid $white;
+  }
+
+  .services-content {
+    padding: 40px 15px 25px;
+    text-align: center;
+    color: $white;
+    position: relative;
+    transition: $main-transition;
+
+    .services-head {
+      color: $black;
+      margin-bottom: 12px;
+      height: 27px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 20px;
+      transition: $main-transition;
+    }
+
+    .services-desc {
+      font-size: 14px;
+      color: $black;
+      line-height: 1.6;
+      height: 68px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: $main-transition;
+      margin-bottom: 15px;
+    }
+  }
+
+  .services_btn {
+    color: $white;
+    margin: auto;
+    font-weight: 500;
+    background-color: $sec;
+  }
+
+  &:hover {
+    .services-content {
+      background-color: $sec;
+
+      .services-desc,
+      .services-head {
+        color: $white;
+      }
+
+      .services_btn {
+        background-color: $white !important;
+        color: $black !important;
+      }
+    }
+  }
+}
+/********************* End services section *********************/
+
+/********************* Start Team section *********************/
+
+.team-card {
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background: $white;
+  box-shadow: $sec-shadow;
+  overflow: hidden;
+  
+  .top {
+    border-top-right-radius: 12px;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: $sec;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: inherit;
+      -webkit-transform: skewY(8deg);
+      transform: skewY(8deg);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+    }
+    
+    .avatar {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30px;
+      z-index: 5;
+      @include circle(120px);
+      overflow: hidden;
+      background: #ccc;
+      border: 3px solid #fff;
+      display: block;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .team-name {
+    position: relative;
+    margin: 100px 0 30px;
+    text-align: center;
+    font-size: 19px;
+    color: $black;
+    
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      margin-left: -15px;
+      width: 35px;
+      height: 1px;
+      background: #000;
+    }
+  }
+  
+  .desc {
+    padding: 0 1rem 2rem;
+    text-align: center;
+    line-height: 1.5;
+    color: $black;
+  }
+}
+
+/********************* End Team section *********************/
