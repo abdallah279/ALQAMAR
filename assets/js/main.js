@@ -149,3 +149,89 @@ $(document).ready(function () {
 });
 
 new WOW().init();
+$('.num').countUp();
+
+/******************* All Sliders *******************/
+
+$(document).ready(function () {
+  /************ home Slider ***********/
+  $(".home-slider").owlCarousel({
+    items: 1,
+    loop: true,
+    rtl: isRtl,
+    dots: true,
+    nav: false,
+    autoplay: true,
+    margin: 10,
+    autoplayTimeout: 5000,
+    autoplaySpeed: 1500,
+    smartSpeed: 1500,
+  });
+
+  /************ services Slider ***********/
+  const owl = $(".services-slider");
+
+  owl.on("changed.owl.carousel", function (event) {
+    setTimeout(() => {
+      owl.find(".owl-stage-outer").addClass("py-3");
+    }, 0.1);
+  });
+
+  owl.owlCarousel({
+    items: 1,
+    rtl: isRtl,
+    autoplaySpeed: 3000,
+    autoplayTimeout: 5000,
+    smartSpeed: 2000,
+    autoplayHoverPause: false,
+    margin: 25,
+    loop: true,
+    dots: false,
+    nav: true,
+    autoplay: true,
+    navText: [
+      `<i class="fa-solid fa-arrow-right-long"></i>`,
+      `<i class="fa-solid fa-arrow-left-long"></i>`,
+    ],
+    responsive: {
+      1200: {
+        items: 4,
+      },
+      991: {
+        items: 3,
+      },
+      560: {
+        items: 2,
+        nav: false,
+      },
+    },
+  });
+
+  /************ Clients Carousel ***********/
+  $(".clients-slider").owlCarousel({
+    items: 2,
+    loop: true,
+    rtl: isRtl,
+    margin: 35,
+    dots: false,
+    autoplay: true,
+    slideTransition: "linear",
+    autoplayTimeout: 2800,
+    autoplaySpeed: 2800,
+    autoplayHoverPause: true,
+    responsive: {
+      1200: {
+        items: 7,
+      },
+      1000: {
+        items: 6,
+      },
+      800: {
+        items: 4,
+      },
+      400: {
+        items: 3,
+      },
+    },
+  });
+});

@@ -465,28 +465,31 @@
 }
 
 /********************* breadcrumb *********************/
-.breadcrumb-con {
+.breadcrumb-con{
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
   // margin-bottom: 25px;
+  
 
-  .breadcrumb-m {
+  .breadcrumb-m{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 13px;
-    color: $main;
+    font-size: 17px;
+    color: $white;
+    
+    i{
+      font-size: 15px;
+      color: $white;
 
-    &.active {
-      color: $main;
-    }
-
-    i {
-      font-size: 11px;
+      #{$ltr} &{
+        transform: rotate(-180deg);
+      }
     }
   }
 }
+
 
 /********************* iti__selected-flag *************/
 .iti {

@@ -1,12 +1,11 @@
 .page-navbar {
   padding: 10px 0;
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // z-index: 1050;
+  position: sticky;
+  top: 0;
   background-color: $white;
   transition: $main-transition;
+  box-shadow: $sec-shadow;
+  z-index: 100;
 
   &.scroll {
     -webkit-backdrop-filter: blur(10px);
@@ -17,6 +16,7 @@
 
   @media screen and (max-width: $screen-lg) {
     padding: 7px 0;
+    position: unset;
   }
 
   .navbar-content {
@@ -102,7 +102,7 @@
       }
 
       .link {
-        color: $main;
+        color: $black;
         font-size: 16px;
         position: relative;
         font-weight: 600;
@@ -134,6 +134,7 @@
 
         &.active,
         &:hover {
+          color: $main;
           &::after, &::before {
             width: 65%;
           }

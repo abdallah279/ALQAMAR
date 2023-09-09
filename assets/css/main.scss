@@ -1,5 +1,6 @@
 @import "sass/variables", "sass/mixins", "sass/global", "sass/components",
   "sass/navbar", "sass/footer";
+
 /********************* Start Slider section *********************/
 
 .home-sec {
@@ -8,14 +9,11 @@
     height: calc(100vh - 82px);
     display: flex;
     align-items: center;
+    min-height: 600px;
 
     @media screen and (max-width: $screen-lg) {
       height: calc(100vh - 70px);
     }
-
-    // @media screen and (max-width: $screen-sm) {
-    //   height: 200px;
-    // }
 
     &::after {
       content: "";
@@ -117,12 +115,21 @@
       font-size: 20px;
       color: $black;
       margin-bottom: 18px;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 18px;
+      }
     }
 
     .prin-desc {
       font-size: 16px;
       color: $main;
       line-height: 2;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 15px;
+        line-height: 1.7;
+      }
     }
 
     &::after,
@@ -269,19 +276,18 @@
 /********************* Start Team section *********************/
 
 .team-card {
-  border-top-right-radius: 12px;
-  border-bottom-left-radius: 12px;
   background: $white;
   box-shadow: $sec-shadow;
   overflow: hidden;
-  
+  border-start-start-radius: 12px;
+  border-end-end-radius: 12px;
+
   .top {
-    border-top-right-radius: 12px;
     position: relative;
     width: 100%;
     height: 60px;
     background-color: $sec;
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -290,12 +296,18 @@
       left: 0;
       right: 0;
       background: inherit;
-      -webkit-transform: skewY(8deg);
-      transform: skewY(8deg);
-      -webkit-transform-origin: 0 100%;
-      transform-origin: 0 100%;
+
+      #{$ltr} & {
+        transform: skewY(-8deg);
+        transform-origin: 100% 0;
+      }
+
+      #{$rtl} & {
+        transform: skewY(8deg);
+        transform-origin: 0 100%;
+      }
     }
-    
+
     .avatar {
       position: absolute;
       left: 50%;
@@ -307,22 +319,22 @@
       background: #ccc;
       border: 3px solid #fff;
       display: block;
-      
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: $main-transition;
       }
     }
   }
-  
+
   .team-name {
     position: relative;
     margin: 100px 0 30px;
     text-align: center;
     font-size: 19px;
     color: $black;
-    
 
     &::after {
       content: "";
@@ -335,13 +347,206 @@
       background: #000;
     }
   }
-  
+
   .desc {
     padding: 0 1rem 2rem;
     text-align: center;
     line-height: 1.5;
     color: $black;
   }
+
+  &:hover {
+    .top {
+      .avatar {
+        img {
+          transform: scale(1.3);
+        }
+      }
+    }
+  }
 }
 
 /********************* End Team section *********************/
+
+/********************* Start numbers section *********************/
+
+.our-numbers {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+
+  .number-items {
+    @include center;
+    flex-wrap: wrap;
+    gap: 30px 85px;
+
+    @media screen and (max-width: $screen-sm) {
+      justify-content: start;
+      gap: 20px;
+    }
+
+    .number-item {
+      text-align: center;
+      color: $white;
+
+      .num {
+        font-size: 34px;
+        margin-bottom: 10px;
+
+        @media screen and (max-width: $screen-sm) {
+          font-size: 28px;
+        }
+      }
+
+      .text {
+        font-size: 20px;
+
+        @media screen and (max-width: $screen-sm) {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+/********************* End numbers section *********************/
+
+/********************* Start brand section *********************/
+
+.brand-img {
+  max-width: 90px;
+  max-height: 100px;
+  width: fit-content !important;
+  margin: 0 auto;
+  /* object-fit: cover; */
+}
+
+/********************* End brand section *********************/
+
+/********************* Start page-header section *********************/
+
+.page-header {
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #003731b5;
+    z-index: -1;
+  }
+
+  .section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    object-fit: cover;
+  }
+
+  .page-info {
+    padding: 80px 0;
+    // padding-bottom: 40px;
+    @include center;
+    flex-direction: column;
+
+    @media screen and (max-width: $screen-xs) {
+      padding-top: 80px;
+      padding-bottom: 25px;
+    }
+
+    .page-head {
+      font-size: 30px;
+      color: $white;
+      margin-bottom: 18px;
+
+      @media screen and (max-width: $screen-xs) {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+/********************* End page-header section *********************/
+
+/********************* Start gallary section *********************/
+
+.gallary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  align-items: start;
+  justify-items: center;
+
+  @media screen and (max-width:$screen-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media screen and (max-width:$screen-xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fancybox-img {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+    width: 100%;
+
+    @media screen and (max-width:$screen-xs) {
+      height: 180px !important;
+    }
+
+    .gallary-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $main-transition;
+    }
+
+    &:nth-child(6) {
+      grid-column: span 5;
+      height: 400px;
+      width: 100%;
+      
+      @media screen and (max-width:$screen-lg) {
+        grid-column: span 1;
+        height: 200px;
+      }
+    }
+
+    &:nth-child(4) {
+      @media screen and (max-width:$screen-lg) {
+        height: 400px;
+        grid-column: span 3;
+        width: 100%;
+      }
+
+      @media screen and (max-width:$screen-md) {
+        height: 200px;
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+/********************* End gallary section *********************/

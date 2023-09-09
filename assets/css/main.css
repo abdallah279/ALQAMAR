@@ -43,26 +43,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: fontDemi;
-  src: url("../fonts/ArbFONTS-URW-DIN-Arabic-Demi.ttf");
-}
-@font-face {
-  font-family: fontReg;
-  src: url("../fonts/ArbFONTS-URW-DIN-Arabic-Light.ttf");
-}
-@font-face {
-  font-family: fontMed;
-  src: url("../fonts/ArbFONTS-URW-DIN-Arabic-Medium.ttf");
-}
-@font-face {
-  font-family: fontBold;
-  src: url("../fonts/ArbFONTS-URW-DIN-Arabic-Bold.ttf");
-}
-@font-face {
-  font-family: fontPrima;
-  src: url("../../fonts/prima_serif_roman_bt.ttf");
-}
 html {
   scroll-behavior: smooth;
 }
@@ -720,20 +700,21 @@ html[lang=ar] .steps .step-item + .step-item:after {
 .breadcrumb-con {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 .breadcrumb-con .breadcrumb-m {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 13px;
-  color: #213f7d;
-}
-.breadcrumb-con .breadcrumb-m.active {
-  color: #213f7d;
+  font-size: 17px;
+  color: #fff;
 }
 .breadcrumb-con .breadcrumb-m i {
-  font-size: 11px;
+  font-size: 15px;
+  color: #fff;
+}
+html[lang=en] .breadcrumb-con .breadcrumb-m i {
+  transform: rotate(-180deg);
 }
 
 /********************* iti__selected-flag *************/
@@ -3076,8 +3057,12 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 
 .page-navbar {
   padding: 10px 0;
+  position: sticky;
+  top: 0;
   background-color: #fff;
   transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  z-index: 100;
 }
 .page-navbar.scroll {
   -webkit-backdrop-filter: blur(10px);
@@ -3088,6 +3073,7 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 @media screen and (max-width: 992px) {
   .page-navbar {
     padding: 7px 0;
+    position: unset;
   }
 }
 .page-navbar .navbar-content {
@@ -3181,7 +3167,7 @@ html[lang=ar] .page-navbar .navbar-content .side-close {
   }
 }
 .page-navbar .navbar-content .links .link {
-  color: #213f7d;
+  color: #000;
   font-size: 16px;
   position: relative;
   font-weight: 600;
@@ -3209,6 +3195,9 @@ html[lang=en] .page-navbar .navbar-content .links .link::after {
 }
 html[lang=ar] .page-navbar .navbar-content .links .link::after {
   right: 0;
+}
+.page-navbar .navbar-content .links .link.active, .page-navbar .navbar-content .links .link:hover {
+  color: #213f7d;
 }
 .page-navbar .navbar-content .links .link.active::after, .page-navbar .navbar-content .links .link.active::before, .page-navbar .navbar-content .links .link:hover::after, .page-navbar .navbar-content .links .link:hover::before {
   width: 65%;
@@ -3239,8 +3228,8 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 }
 
 .footer {
-  padding: 120px 0;
-  background-color: #000;
+  padding: 80px 0;
+  background-color: #2e60a9;
   position: relative;
   z-index: 2;
 }
@@ -3262,10 +3251,14 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
   max-width: 550px;
   height: 100%;
   z-index: -1;
+  opacity: 0.1;
 }
 @media screen and (max-width: 768px) {
   .footer .blur_logo {
     max-width: 100%;
+    height: 355px;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .footer .footer-content .footer-head {
@@ -3293,16 +3286,16 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 .footer .footer-content .footer-links-con {
   display: flex;
   align-items: start;
-  gap: 30px;
+  gap: 40px;
 }
 .footer .footer-content .footer-links .link {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   width: fit-content;
   color: #fff;
   font-weight: light;
   transition: all 0.3s ease-in-out;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
 }
 html[lang=en] .footer .footer-content .footer-links .link:hover {
@@ -3338,7 +3331,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   }
 }
 .footer .footer-content .center .logo {
-  max-width: 160px;
+  max-width: 130px;
   margin-bottom: 25px;
 }
 @media screen and (max-width: 576px) {
@@ -3354,47 +3347,41 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
     text-align: start;
   }
 }
-.footer .footer-content .left .social-con {
+.footer .footer-content .left .social-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 12px 0;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 15px;
 }
-@media screen and (max-width: 576px) {
-  .footer .footer-content .left .social-con {
+@media screen and (max-width: 425px) {
+  .footer .footer-content .left .social-links {
     justify-content: start;
   }
 }
-.footer .footer-content .left .social-con .name {
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
-}
-@media screen and (max-width: 425px) {
-  .footer .footer-content .left .social-con .name {
-    font-size: 16px;
-  }
-}
-.footer .footer-content .left .social-con .social {
+.footer .footer-content .left .social-links .link {
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 6px;
-}
-.footer .footer-content .left .social-con .ic {
   font-size: 14px;
+  color: #213f7d;
+  background-color: #fff;
+}
+.footer .footer-content .left .social-links .link:hover {
+  background-color: #213f7d;
   color: #fff;
-  max-width: 16px;
-  max-height: 14px;
-  transition: all 0.3s ease-in-out;
+  transform: rotate(360deg);
 }
 .footer .footer-content .left .whatsapp-ic {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
+  margin-top: 20px;
 }
 @media screen and (max-width: 576px) {
   .footer .footer-content .left .whatsapp-ic {
@@ -3402,7 +3389,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   }
 }
 .footer .footer-content .left .whatsapp-ic .num {
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   font-weight: bold;
 }
@@ -3413,6 +3400,8 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 }
 .footer .footer-content .left .whatsapp-ic .ic {
   max-width: 22px;
+  font-size: 20px;
+  color: #fff;
 }
 @media screen and (max-width: 425px) {
   .footer .footer-content .left .whatsapp-ic .ic {
@@ -3439,8 +3428,9 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
     padding: 12px;
   }
 }
-.copy-right .name {
-  font-weight: bolder;
+.copy-right a {
+  color: #2e60a9;
+  text-decoration: underline;
 }
 
 /********************* Start Slider section *********************/
@@ -3449,6 +3439,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   height: calc(100vh - 82px);
   display: flex;
   align-items: center;
+  min-height: 600px;
 }
 @media screen and (max-width: 992px) {
   .home-sec .home-item {
@@ -3552,10 +3543,21 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   color: #000;
   margin-bottom: 18px;
 }
+@media screen and (max-width: 425px) {
+  .principles-cards .principle-card .prin-name {
+    font-size: 18px;
+  }
+}
 .principles-cards .principle-card .prin-desc {
   font-size: 16px;
   color: #213f7d;
   line-height: 2;
+}
+@media screen and (max-width: 425px) {
+  .principles-cards .principle-card .prin-desc {
+    font-size: 15px;
+    line-height: 1.7;
+  }
 }
 .principles-cards .principle-card::after, .principles-cards .principle-card::before {
   content: "";
@@ -3687,14 +3689,13 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 /********************* End services section *********************/
 /********************* Start Team section *********************/
 .team-card {
-  border-top-right-radius: 12px;
-  border-bottom-left-radius: 12px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   overflow: hidden;
+  border-start-start-radius: 12px;
+  border-end-end-radius: 12px;
 }
 .team-card .top {
-  border-top-right-radius: 12px;
   position: relative;
   width: 100%;
   height: 60px;
@@ -3708,9 +3709,13 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   left: 0;
   right: 0;
   background: inherit;
-  -webkit-transform: skewY(8deg);
+}
+html[lang=en] .team-card .top::after {
+  transform: skewY(-8deg);
+  transform-origin: 100% 0;
+}
+html[lang=ar] .team-card .top::after {
   transform: skewY(8deg);
-  -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
 }
 .team-card .top .avatar {
@@ -3731,6 +3736,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 .team-card .team-name {
   position: relative;
@@ -3755,7 +3761,185 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   line-height: 1.5;
   color: #000;
 }
+.team-card:hover .top .avatar img {
+  transform: scale(1.3);
+}
 
 /********************* End Team section *********************/
+/********************* Start numbers section *********************/
+.our-numbers {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 2;
+}
+.our-numbers::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.our-numbers .number-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px 85px;
+}
+@media screen and (max-width: 576px) {
+  .our-numbers .number-items {
+    justify-content: start;
+    gap: 20px;
+  }
+}
+.our-numbers .number-items .number-item {
+  text-align: center;
+  color: #fff;
+}
+.our-numbers .number-items .number-item .num {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 576px) {
+  .our-numbers .number-items .number-item .num {
+    font-size: 28px;
+  }
+}
+.our-numbers .number-items .number-item .text {
+  font-size: 20px;
+}
+@media screen and (max-width: 576px) {
+  .our-numbers .number-items .number-item .text {
+    font-size: 17px;
+  }
+}
+
+/********************* End numbers section *********************/
+/********************* Start brand section *********************/
+.brand-img {
+  max-width: 90px;
+  max-height: 100px;
+  width: fit-content !important;
+  margin: 0 auto;
+  /* object-fit: cover; */
+}
+
+/********************* End brand section *********************/
+/********************* Start page-header section *********************/
+.page-header {
+  position: relative;
+  z-index: 2;
+}
+.page-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 55, 49, 0.7098039216);
+  z-index: -1;
+}
+.page-header .section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+.page-header .page-info {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 425px) {
+  .page-header .page-info {
+    padding-top: 80px;
+    padding-bottom: 25px;
+  }
+}
+.page-header .page-info .page-head {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+@media screen and (max-width: 425px) {
+  .page-header .page-info .page-head {
+    font-size: 26px;
+  }
+}
+
+/********************* End page-header section *********************/
+/********************* Start gallary section *********************/
+.gallary {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  align-items: start;
+  justify-items: center;
+}
+@media screen and (max-width: 992px) {
+  .gallary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 425px) {
+  .gallary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.gallary .fancybox-img {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+@media screen and (max-width: 425px) {
+  .gallary .fancybox-img {
+    height: 180px !important;
+  }
+}
+.gallary .fancybox-img .gallary-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.gallary .fancybox-img:nth-child(6) {
+  grid-column: span 5;
+  height: 400px;
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .gallary .fancybox-img:nth-child(6) {
+    grid-column: span 1;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .gallary .fancybox-img:nth-child(4) {
+    height: 400px;
+    grid-column: span 3;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallary .fancybox-img:nth-child(4) {
+    height: 200px;
+    grid-column: span 1;
+  }
+}
+
+/********************* End gallary section *********************/
 
 /*# sourceMappingURL=main.css.map */
