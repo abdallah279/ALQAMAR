@@ -1174,6 +1174,10 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   color: #213f7d !important;
 }
 
+.c-sec {
+  color: #2e60a9 !important;
+}
+
 .c-red {
   color: #d93f21 !important;
 }
@@ -1613,17 +1617,10 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
 }
 .main-label .hint {
   color: #101112;
-  font-family: fontReg;
   font-size: 14px;
 }
 @media screen and (max-width: 576px) {
   .main-label {
-    font-size: 15px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .main-label {
-    font-family: fontMed;
     font-size: 15px;
   }
 }
@@ -2853,13 +2850,13 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 }
 .dropdown-toggle .drop-text {
   font-size: 14px;
-  color: #213f7d;
+  color: #000;
 }
 .dropdown-toggle .drop-ic {
   max-width: 16px;
   max-height: 18px;
   font-size: 14px;
-  color: #213f7d;
+  color: #000;
 }
 .dropdown-toggle .drop-ic2 {
   max-width: 10px;
@@ -3228,20 +3225,26 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 }
 
 .footer {
-  padding: 80px 0;
-  background-color: #2e60a9;
+  padding: 70px 0;
+  background-color: rgba(43, 195, 242, 0.1);
   position: relative;
   z-index: 2;
-}
-@media screen and (max-width: 992px) {
-  .footer {
-    padding: 70px 0;
-  }
 }
 @media screen and (max-width: 768px) {
   .footer {
     padding: 50px 0;
   }
+}
+.footer::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(43, 195, 242, 0.2);
+  width: 300px;
+  height: 6px;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -3px;
 }
 .footer .blur_logo {
   position: absolute;
@@ -3264,7 +3267,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 .footer .footer-content .footer-head {
   margin-bottom: 20px;
   font-size: 17px;
-  color: #fff;
+  color: #000;
   font-weight: bold;
   position: relative;
   width: fit-content;
@@ -3276,7 +3279,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 }
 .footer .footer-content .footer-info {
   font-size: 15px;
-  color: #fff;
+  color: #000;
   line-height: 1.8;
   font-weight: 300;
 }
@@ -3292,7 +3295,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
   display: block;
   margin-bottom: 12px;
   width: fit-content;
-  color: #fff;
+  color: #000;
   font-weight: light;
   transition: all 0.3s ease-in-out;
   font-size: 15px;
@@ -3368,12 +3371,12 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  color: #213f7d;
-  background-color: #fff;
+  color: #fff;
+  background-color: #213f7d;
 }
 .footer .footer-content .left .social-links .link:hover {
-  background-color: #213f7d;
-  color: #fff;
+  background-color: #fff;
+  color: #213f7d;
   transform: rotate(360deg);
 }
 .footer .footer-content .left .whatsapp-ic {
@@ -3390,8 +3393,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 }
 .footer .footer-content .left .whatsapp-ic .num {
   font-size: 20px;
-  color: #fff;
-  font-weight: bold;
+  color: #000;
 }
 @media screen and (max-width: 425px) {
   .footer .footer-content .left .whatsapp-ic .num {
@@ -3401,7 +3403,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 .footer .footer-content .left .whatsapp-ic .ic {
   max-width: 22px;
   font-size: 20px;
-  color: #fff;
+  color: #000;
 }
 @media screen and (max-width: 425px) {
   .footer .footer-content .left .whatsapp-ic .ic {
@@ -3941,5 +3943,192 @@ html[lang=ar] .team-card .top::after {
 }
 
 /********************* End gallary section *********************/
+/********************* Start about-con section *********************/
+.about-con {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 35px;
+}
+@media screen and (max-width: 992px) {
+  .about-con {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+.about-con .about-right {
+  width: 100%;
+}
+.about-con .about-right .about-title {
+  width: fit-content;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 30px;
+  position: relative;
+}
+.about-con .about-right .about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  background-color: #2e60a9;
+  width: 80px;
+  height: 1px;
+}
+html[lang=en] .about-con .about-right .about-title::after {
+  left: 0;
+}
+html[lang=ar] .about-con .about-right .about-title::after {
+  right: 0;
+}
+.about-con .about-right .desc {
+  font-size: 15px;
+  color: #000;
+  line-height: 2;
+}
+.about-con .about-img {
+  position: relative;
+  flex-shrink: 0;
+}
+.about-con .about-img .img {
+  width: 400px;
+  height: 340px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+@media screen and (max-width: 576px) {
+  .about-con .about-img .img {
+    width: 340px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .about-con .about-img .img {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/********************* End about-con section *********************/
+/********************* Start contact-box section *********************/
+.contact-box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 25px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 768px) {
+  .contact-box {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+.contact-box .ic {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #2e60a9;
+  font-size: 18px;
+  color: #2e60a9;
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .contact-box .ic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+.contact-box .name {
+  font-size: 18px;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .contact-box .name {
+    font-size: 16px;
+  }
+}
+.contact-box .desc {
+  font-size: 14px;
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .contact-box .desc {
+    font-size: 13px;
+  }
+}
+.contact-box:hover {
+  transform: translateY(-10px);
+}
+.contact-box:hover .ic {
+  background-color: #2e60a9;
+  color: #fff;
+}
+
+.contact_form {
+  background-color: #f9f9f9;
+  padding: 35px 25px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 65;
+}
+@media screen and (max-width: 768px) {
+  .contact_form {
+    padding: 20px 15px;
+  }
+}
+.contact_form .input-g {
+  margin-bottom: 24px;
+}
+.contact_form .input-me {
+  background-color: #fff !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.contact_form .main-icon {
+  color: #2e60a9;
+}
+.contact_form .main-btn {
+  background-color: #fff;
+  color: #2e60a9;
+  border-color: #2e60a9;
+}
+
+.contact_title {
+  width: fit-content;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 40px;
+  position: relative;
+}
+.contact_title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  background-color: #2e60a9;
+  width: 80px;
+  height: 1px;
+}
+html[lang=en] .contact_title::after {
+  left: 0;
+}
+html[lang=ar] .contact_title::after {
+  right: 0;
+}
+
+.contact-sec iframe {
+  min-height: 360px;
+}
+
+/********************* End contact-box section *********************/
 
 /*# sourceMappingURL=main.css.map */

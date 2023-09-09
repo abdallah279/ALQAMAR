@@ -987,6 +987,10 @@
   color: $main !important;
 }
 
+.c-sec {
+  color: $sec !important;
+}
+
 .c-red {
   color: $red !important;
 }
@@ -1397,7 +1401,6 @@
 .main-label {
   margin-bottom: 12px;
   font-size: 15px;
-  // font-family: fontDemi;
   color: $black;
   display: flex;
   align-items: center;
@@ -1405,16 +1408,10 @@
 
   .hint {
     color: $dark;
-    font-family: fontReg;
     font-size: 14px;
   }
 
   @media screen and (max-width: $screen-sm) {
-    font-size: 15px;
-  }
-
-  @media screen and (max-width: $screen-xs) {
-    font-family: fontMed;
     font-size: 15px;
   }
 }
@@ -2693,14 +2690,14 @@
 
   .drop-text {
     font-size: 14px;
-    color: $main;
+    color: $black;
   }
 
   .drop-ic {
     max-width: 16px;
     max-height: 18px;
     font-size: 14px;
-    color: $main;
+    color: $black;
   }
 
   .drop-ic2 {

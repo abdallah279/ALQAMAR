@@ -1,15 +1,23 @@
 .footer {
-  padding: 80px 0;
-  background-color: $sec;
+  padding: 70px 0;
+  background-color: rgba($color: $bink, $alpha: 0.1);
   position: relative;
   z-index: 2;
 
-  @media screen and (max-width: $screen-lg) {
-    padding: 70px 0;
-  }
-
   @media screen and (max-width: $screen-md) {
     padding: 50px 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba($color: $bink, $alpha: 0.2);
+    width: 300px;
+    height: 6px;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -3px;
   }
 
   .blur_logo {
@@ -20,7 +28,7 @@
     max-width: 550px;
     height: 100%;
     z-index: -1;
-    opacity: .1;
+    opacity: 0.1;
 
     @media screen and (max-width: $screen-md) {
       max-width: 100%;
@@ -34,7 +42,7 @@
     .footer-head {
       margin-bottom: 20px;
       font-size: 17px;
-      color: $white;
+      color: $black;
       font-weight: bold;
       position: relative;
       width: fit-content;
@@ -46,7 +54,7 @@
 
     .footer-info {
       font-size: 15px;
-      color: $white;
+      color: $black;
       line-height: 1.8;
       font-weight: 300;
 
@@ -66,7 +74,7 @@
         display: block;
         margin-bottom: 12px;
         width: fit-content;
-        color: $white;
+        color: $black;
         font-weight: light;
         transition: $main-transition;
         font-size: 15px;
@@ -127,30 +135,30 @@
         text-align: start;
       }
 
-      .social-links{
+      .social-links {
         @include center;
         gap: 7px;
         flex-wrap: wrap;
         margin-top: 15px;
 
-        @media screen and (max-width:$screen-xs) {
+        @media screen and (max-width: $screen-xs) {
           justify-content: start;
         }
 
-        .link{
-            @include circle(38px);
-            @include center;
-            font-size: 14px;
-            color: $main;
-            background-color: $white;
+        .link {
+          @include circle(38px);
+          @include center;
+          font-size: 14px;
+          color: $white;
+          background-color: $main;
 
-            &:hover{
-                background-color: $main;
-                color: $white;
-                transform: rotate(360deg);
-            }
+          &:hover {
+            background-color: $white;
+            color: $main;
+            transform: rotate(360deg);
+          }
         }
-    }
+      }
 
       .whatsapp-ic {
         @include center;
@@ -163,8 +171,8 @@
 
         .num {
           font-size: 20px;
-          color: $white;
-          font-weight: bold;
+          color: $black;
+          // font-weight: bold;
 
           @media screen and (max-width: $screen-xs) {
             font-size: 16px;
@@ -174,7 +182,7 @@
         .ic {
           max-width: 22px;
           font-size: 20px;
-          color: $white;
+          color: $black;
 
           @media screen and (max-width: $screen-xs) {
             max-width: 18px;
