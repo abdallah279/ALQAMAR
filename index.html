@@ -188,7 +188,8 @@
 
 
     <!-- Start Services Section -->
-    <section class="services-sec main-padding">
+    <section class="services-sec main-padding position-relative">
+        <img src="./assets/imgs/bg2.jpg" alt="" class="bg">
         <div class="container">
 
             <h2 class="main-title bounceIn wow">خدماتنا</h2>
@@ -581,6 +582,80 @@
 
 
     <div class="overlay-m"></div>
+
+
+    <!-- Get A Quote -->
+    <button type="button" class="get-quote up" data-bs-toggle="modal" data-bs-target="#quoteForm">طلب خدمة</button>
+
+    <div class="modal fade modal-map" id="quoteForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="" class="w-100">
+
+                    <div class="modal-body">
+
+                        <h3 class="fs-18 c-black mb-4 text-center">طلب خدمة</h3>
+
+                        <div class="row gy-3 gx-3">
+
+                            <div class="col-12">
+                                <div class="main-input">
+                                    <div class="main-label">اختر الخدمة</div>
+                                    <select name="" id="" class="select">
+                                        <option value="" selected disabled>اختر الخدمة</option>
+                                        <option value="">اختر الخدمة</option>
+                                        <option value="">اختر الخدمة</option>
+                                        <option value="">اختر الخدمة</option>
+                                        <option value="">اختر الخدمة</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="main-input">
+                                    <div class="main-label">الاسم الكامل</div>
+                                    <input type="text" placeholder="الاسم الكامل" class="input-me">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="main-input">
+                                    <div class="main-label">البريد الالكترونى</div>
+                                    <input type="email" placeholder="البريد الالكترونى" class="input-me">
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="main-input">
+                                    <div class="main-label">رقم الهاتف</div>
+                                    <input type="phone" placeholder="رقم الهاتف" class="input-me">
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <div class="main-input">
+                                    <div class="main-label">موضوع الرسالة</div>
+                                    <input type="text" placeholder="موضوع الرسالة" class="input-me">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="main-input">
+                                    <textarea class="input-me text-area" placeholder="رسالتك او استفسارك"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="main-btn up confirm-btn">تأكيد</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 

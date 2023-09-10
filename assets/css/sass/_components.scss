@@ -225,7 +225,7 @@
   width: 100%;
   height: 100%;
   z-index: -3;
-  opacity: 0.6;
+  opacity: 0.08;
 }
 
 // Drop Down
@@ -1422,14 +1422,14 @@
   .input-me {
     width: 100%;
     min-height: 48px;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 0 12px;
     outline: none;
     border: none;
     font-size: 14px;
-    color: $dark;
+    color: $black;
     transition: $main-transition;
-    border: 1px solid $main;
+    border: 1px solid rgba($color: $black, $alpha: .5);
     background-color: $white;
 
     @media screen and (max-width: $screen-xs) {
@@ -1446,13 +1446,13 @@
 
     &::placeholder {
       font-size: 13px;
-      color: $main;
+      color: $black;
       transition: $main-transition;
     }
 
     &:focus {
-      // border-color: $black;
-      background-color: $sec;
+      border-color: #f9f9f9;
+      background-color: #f9f9f9;
 
       &::placeholder {
         opacity: 0;
@@ -1606,12 +1606,12 @@
       min-height: 48px;
       display: flex;
       align-items: center;
-      border-radius: 12px;
+      border-radius: 8px;
       // padding: 6px 0;
       outline: none;
       font-size: 13px;
-      color: $dark;
-      border: 1px solid $black;
+      color: $black;
+      border: 1px solid rgba($color: $black, $alpha: .5);
       // box-shadow: $main-shadow;
 
       @media (max-width: $screen-xs) {
@@ -2406,7 +2406,7 @@
 
     .modal-body {
       width: 100%;
-      padding: 0 80px;
+      padding: 0 40px;
 
       &.center {
         @include center;

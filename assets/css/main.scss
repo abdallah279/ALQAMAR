@@ -191,7 +191,7 @@
   display: block;
   background-color: rgba($color: $white, $alpha: 1);
   position: relative;
-  box-shadow: $main-shadow;
+  box-shadow: $sec-shadow;
 
   .img {
     position: relative;
@@ -726,9 +726,116 @@
   }
 }
 
-.contact-sec{
-  iframe{
+.contact-sec {
+  iframe {
     min-height: 360px;
   }
 }
 /********************* End contact-box section *********************/
+
+/********************* Start get-quote section *********************/
+.get-quote {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  @include dir-right(0);
+  background-color: $sec;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-size: 15px;
+  padding: 12px;
+  @include dir-padding-left(25px);
+  z-index: 100;
+  writing-mode: vertical-rl;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border: 1px solid $sec;
+  border-start-start-radius: 35px;
+  border-end-start-radius: 35px;
+}
+/********************* End get-quote section *********************/
+
+
+/********************* Start services-detailes section *********************/
+.services-detailes-con{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 45px;
+
+  @media screen and (max-width:$screen-lg) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detailes-right{
+    width: 100%;
+
+    .small-title{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      background-color: $sec;
+      border-radius: 25px;
+      width: fit-content;
+      color: $white;
+      font-size: 15px;
+      
+      #{$ltr} & {
+        padding: 10px 25px 10px 15px;
+      }
+      #{$rtl} & {
+        padding: 10px 15px 10px 25px;
+      }
+    }
+
+    .detailes-title{
+      font-size: 24px;
+      color: $black;
+      margin-bottom: 18px;
+    }
+
+    .desc{
+      font-size: 16px;
+      color: $black;
+      line-height: 2;
+      font-weight: 600;
+    }
+  }
+
+
+  .detailes-img{
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      border: 1px solid $sec;
+      top: 20px;
+      @include dir-right(20px);
+      z-index: 2;
+    }
+
+    .img{
+      width: 400px;
+      height: 340px;
+      border-radius: 15px;
+      object-fit: cover;
+
+      @media screen and (max-width:$screen-sm) {
+        width: 340px;
+        height: 300px;
+      }
+
+      @media screen and (max-width:$screen-xxs) {
+        width: 260px;
+        height: 260px;
+      }
+    }
+  }
+}
+/********************* End services-detailes section *********************/
