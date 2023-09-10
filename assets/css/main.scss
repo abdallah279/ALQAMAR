@@ -801,6 +801,12 @@
       color: $black;
       line-height: 2;
       font-weight: 600;
+
+      @media screen and (max-width:$screen-xs) {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.8;
+      }
     }
   }
 

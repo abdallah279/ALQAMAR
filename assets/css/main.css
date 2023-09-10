@@ -4207,6 +4207,13 @@ html[lang=ar] .services-detailes-con .detailes-right .small-title {
   line-height: 2;
   font-weight: 600;
 }
+@media screen and (max-width: 425px) {
+  .services-detailes-con .detailes-right .desc {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
 .services-detailes-con .detailes-img {
   position: relative;
 }
