@@ -105,7 +105,8 @@
     position: relative;
     padding: 35px 20px;
     text-align: center;
-    background-color: rgba($color: $bink, $alpha: 0.1);
+    // background-color: rgba($color: $bink, $alpha: 0.1);
+    background-color: #e9f9fe;
 
     @media screen and (max-width: $screen-md) {
       padding: 35px 15px;
@@ -276,7 +277,7 @@
 /********************* Start Team section *********************/
 
 .team-card {
-  background: $white;
+  background-color: $white;
   box-shadow: $sec-shadow;
   overflow: hidden;
   border-start-start-radius: 12px;

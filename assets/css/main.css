@@ -64,7 +64,21 @@ body {
   font-family: "Almarai", sans-serif;
   font-family: "Cairo", sans-serif;
   overflow-x: hidden;
-  background-color: #fff;
+  position: relative;
+}
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: url(../imgs/bg_5.png);
+  background-repeat: repeat;
+  background-size: cover;
+  z-index: -1;
 }
 html[lang=en] body {
   direction: ltr;
@@ -232,7 +246,7 @@ input:focus {
   width: 100px;
   height: 100px;
   display: inline-block;
-  border-top: 3px solid #2e60a9;
+  border-top: 3px solid #4f7ab8;
   border-right: 3px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
@@ -807,7 +821,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 
 .main-title {
   position: relative;
-  color: #213f7d;
+  color: #4f7ab8;
   font-size: 19px;
   font-weight: 600;
   width: fit-content;
@@ -822,7 +836,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   transform: translateX(-50%);
   width: 90px;
   height: 1px;
-  background-color: #213f7d;
+  background-color: #4f7ab8;
   border-radius: 15px;
 }
 .main-title::before {
@@ -834,7 +848,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   width: 42px;
   height: 3px;
   border-radius: 15px;
-  background-color: #213f7d;
+  background-color: #4f7ab8;
 }
 @media screen and (max-width: 425px) {
   .main-title {
@@ -1200,7 +1214,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 }
 
 .c-sec {
-  color: #2e60a9 !important;
+  color: #4f7ab8 !important;
 }
 
 .c-red {
@@ -1617,7 +1631,7 @@ html[lang=ar] .main-imgs .main-img:not(:last-child) {
 }
 .stars .star {
   font-size: 17px;
-  color: #2e60a9;
+  color: #4f7ab8;
 }
 .stars.lg {
   gap: 5px;
@@ -3206,7 +3220,7 @@ html[lang=ar] .page-navbar .navbar-content .side-close {
   content: "";
   position: absolute;
   width: 0;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   height: 1px;
   transition: all 0.3s ease-in-out;
 }
@@ -3220,7 +3234,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
   right: 0;
 }
 .page-navbar .navbar-content .links .link.active, .page-navbar .navbar-content .links .link:hover {
-  color: #2e60a9;
+  color: #4f7ab8;
 }
 .page-navbar .navbar-content .links .link.active::after, .page-navbar .navbar-content .links .link.active::before, .page-navbar .navbar-content .links .link:hover::after, .page-navbar .navbar-content .links .link:hover::before {
   width: 65%;
@@ -3252,7 +3266,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
 
 .footer {
   padding: 70px 0;
-  background-color: rgba(43, 195, 242, 0.1);
+  background-color: #e9f9fe;
   position: relative;
   z-index: 2;
 }
@@ -3457,7 +3471,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   }
 }
 .copy-right a {
-  color: #2e60a9;
+  color: #4f7ab8;
   text-decoration: underline;
 }
 
@@ -3559,7 +3573,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   position: relative;
   padding: 35px 20px;
   text-align: center;
-  background-color: rgba(43, 195, 242, 0.1);
+  background-color: #e9f9fe;
 }
 @media screen and (max-width: 768px) {
   .principles-cards .principle-card {
@@ -3617,8 +3631,8 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  border: 1px solid #2e60a9 !important;
-  background-color: #2e60a9 !important;
+  border: 1px solid #4f7ab8 !important;
+  background-color: #4f7ab8 !important;
   color: #fff !important;
   display: flex;
   justify-content: center;
@@ -3700,10 +3714,10 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   color: #fff;
   margin: auto;
   font-weight: 500;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
 }
 .services-card:hover .services-content {
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
 }
 .services-card:hover .services-content .services-desc,
 .services-card:hover .services-content .services-head {
@@ -3717,7 +3731,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 /********************* End services section *********************/
 /********************* Start Team section *********************/
 .team-card {
-  background: #fff;
+  background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   overflow: hidden;
   border-start-start-radius: 12px;
@@ -3727,7 +3741,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   position: relative;
   width: 100%;
   height: 60px;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
 }
 .team-card .top::after {
   content: "";
@@ -3996,7 +4010,7 @@ html[lang=ar] .team-card .top::after {
   content: "";
   position: absolute;
   bottom: -10px;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   width: 80px;
   height: 1px;
 }
@@ -4061,9 +4075,9 @@ html[lang=ar] .about-con .about-right .about-title::after {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  border: 1px solid #2e60a9;
+  border: 1px solid #4f7ab8;
   font-size: 18px;
-  color: #2e60a9;
+  color: #4f7ab8;
   transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 768px) {
@@ -4096,7 +4110,7 @@ html[lang=ar] .about-con .about-right .about-title::after {
   transform: translateY(-10px);
 }
 .contact-box:hover .ic {
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   color: #fff;
 }
 
@@ -4121,12 +4135,12 @@ html[lang=ar] .about-con .about-right .about-title::after {
   border-radius: 0 !important;
 }
 .contact_form .main-icon {
-  color: #2e60a9;
+  color: #4f7ab8;
 }
 .contact_form .main-btn {
   background-color: #fff;
-  color: #2e60a9;
-  border-color: #2e60a9;
+  color: #4f7ab8;
+  border-color: #4f7ab8;
 }
 
 .contact_title {
@@ -4140,7 +4154,7 @@ html[lang=ar] .about-con .about-right .about-title::after {
   content: "";
   position: absolute;
   bottom: -10px;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   width: 80px;
   height: 1px;
 }
@@ -4161,7 +4175,7 @@ html[lang=ar] .contact_title::after {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   color: #fff;
   font-size: 15px;
@@ -4170,7 +4184,7 @@ html[lang=ar] .contact_title::after {
   writing-mode: vertical-rl;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
-  border: 1px solid #2e60a9;
+  border: 1px solid #4f7ab8;
   border-start-start-radius: 35px;
   border-end-start-radius: 35px;
 }
@@ -4209,7 +4223,7 @@ html[lang=ar] .get-quote {
   align-items: center;
   gap: 12px;
   margin-bottom: 18px;
-  background-color: #2e60a9;
+  background-color: #4f7ab8;
   border-radius: 25px;
   width: fit-content;
   color: #fff;
@@ -4248,7 +4262,7 @@ html[lang=ar] .services-detailes-con .detailes-right .small-title {
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  border: 1px solid #2e60a9;
+  border: 1px solid #4f7ab8;
   top: 20px;
   z-index: 2;
 }

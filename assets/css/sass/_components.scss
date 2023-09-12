@@ -573,7 +573,7 @@
 
 .main-title {
   position: relative;
-  color: $main;
+  color: $sec;
   font-size: 19px;
   font-weight: 600;
   width: fit-content;
@@ -588,7 +588,7 @@
     transform: translateX(-50%);
     width: 90px;
     height: 1px;
-    background-color: $main;
+    background-color: $sec;
     border-radius: 15px;
   }
 
@@ -601,7 +601,7 @@
     width: 42px;
     height: 3px;
     border-radius: 15px;
-    background-color: $main;
+    background-color: $sec;
   }
 
   @media screen and (max-width: $screen-xs) {
