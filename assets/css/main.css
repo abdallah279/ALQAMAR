@@ -64,21 +64,6 @@ body {
   font-family: "Almarai", sans-serif;
   font-family: "Cairo", sans-serif;
   overflow-x: hidden;
-  position: relative;
-}
-body::before {
-  content: " ";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.03;
-  background-image: url(../imgs/bg_5.png);
-  background-repeat: repeat;
-  background-size: cover;
-  z-index: -1;
 }
 html[lang=en] body {
   direction: ltr;
@@ -87,6 +72,37 @@ html[lang=en] body {
 html[lang=ar] body {
   direction: rtl;
   text-align: right;
+}
+
+.section-has-pattarn {
+  position: relative;
+  background-color: #000;
+  z-index: 2;
+}
+.section-has-pattarn::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/slider_bg.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+.section-has-pattarn::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: -1;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -333,7 +349,7 @@ input:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: transparent;
   display: none;
   z-index: 1030;
 }
@@ -500,7 +516,7 @@ html[lang=ar] .ml-25 {
   width: 100%;
   height: 100%;
   z-index: -3;
-  opacity: 0.08;
+  opacity: 0.1;
 }
 
 .dropdown-m-container {
@@ -821,7 +837,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
 
 .main-title {
   position: relative;
-  color: #4f7ab8;
+  color: #fff;
   font-size: 19px;
   font-weight: 600;
   width: fit-content;
@@ -836,7 +852,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   transform: translateX(-50%);
   width: 90px;
   height: 1px;
-  background-color: #4f7ab8;
+  background-color: #fff;
   border-radius: 15px;
 }
 .main-title::before {
@@ -848,7 +864,7 @@ html[lang=ar] .iti--separate-dial-code .iti__flag-container {
   width: 42px;
   height: 3px;
   border-radius: 15px;
-  background-color: #4f7ab8;
+  background-color: #fff;
 }
 @media screen and (max-width: 425px) {
   .main-title {
@@ -2890,13 +2906,15 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 }
 .dropdown-toggle .drop-text {
   font-size: 14px;
-  color: #000;
+  color: #213f7d;
+  transition: all 0.3s ease-in-out;
 }
 .dropdown-toggle .drop-ic {
   max-width: 16px;
   max-height: 18px;
   font-size: 14px;
-  color: #000;
+  color: #213f7d;
+  transition: all 0.3s ease-in-out;
 }
 .dropdown-toggle .drop-ic2 {
   max-width: 10px;
@@ -3094,23 +3112,30 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
 
 .page-navbar {
   padding: 10px 0;
-  position: sticky;
-  top: 0;
-  background-color: #fff;
+  position: fixed;
+  width: 100%;
   transition: all 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  z-index: 100;
+  z-index: 1040;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 9px 7px;
 }
 .page-navbar.scroll {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.page-navbar.scroll .dropdown-toggle .drop-text {
+  color: #fff;
+}
+.page-navbar.scroll .dropdown-toggle .drop-ic {
+  color: #fff;
 }
 @media screen and (max-width: 992px) {
   .page-navbar {
     padding: 7px 0;
-    position: unset;
   }
 }
 .page-navbar .navbar-content {
@@ -3122,7 +3147,7 @@ html[lang=ar] .dropdown-menu.drop-filter.show {
   display: none;
   font-size: 16px;
   cursor: pointer;
-  color: #000;
+  color: #fff;
 }
 @media screen and (max-width: 992px) {
   .page-navbar .navbar-content .side-open {
@@ -3161,6 +3186,13 @@ html[lang=ar] .page-navbar .navbar-content .side-close {
   align-items: center;
   gap: 23px;
   transition: all 0.8s cubic-bezier(0.68, -0.3, 0.265, 1.3);
+  flex: 1;
+}
+html[lang=en] .page-navbar .navbar-content .links {
+  padding-left: 50px;
+}
+html[lang=ar] .page-navbar .navbar-content .links {
+  padding-right: 50px;
 }
 @media screen and (max-width: 992px) {
   .page-navbar .navbar-content .links {
@@ -3170,10 +3202,12 @@ html[lang=ar] .page-navbar .navbar-content .side-close {
     width: 280px;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #fff;
     box-shadow: 0 3px 16px rgba(133, 133, 133, 0.05);
     z-index: 2000;
     padding: 50px 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(9px);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-y: auto;
     overflow-x: clip;
   }
@@ -3204,7 +3238,7 @@ html[lang=ar] .page-navbar .navbar-content .side-close {
   }
 }
 .page-navbar .navbar-content .links .link {
-  color: #000;
+  color: #fff;
   font-size: 16px;
   position: relative;
   font-weight: 600;
@@ -3234,7 +3268,7 @@ html[lang=ar] .page-navbar .navbar-content .links .link::after {
   right: 0;
 }
 .page-navbar .navbar-content .links .link.active, .page-navbar .navbar-content .links .link:hover {
-  color: #4f7ab8;
+  color: #fff;
 }
 .page-navbar .navbar-content .links .link.active::after, .page-navbar .navbar-content .links .link.active::before, .page-navbar .navbar-content .links .link:hover::after, .page-navbar .navbar-content .links .link:hover::before {
   width: 65%;
@@ -3463,6 +3497,8 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   font-size: 15px;
   color: #000;
   gap: 3px;
+  position: relative;
+  z-index: 4;
 }
 @media screen and (max-width: 425px) {
   .copy-right {
@@ -3478,15 +3514,10 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 /********************* Start Slider section *********************/
 .home-sec .home-item {
   position: relative;
-  height: calc(100vh - 82px);
+  height: 100vh;
   display: flex;
   align-items: center;
   min-height: 600px;
-}
-@media screen and (max-width: 992px) {
-  .home-sec .home-item {
-    height: calc(100vh - 70px);
-  }
 }
 .home-sec .home-item::after {
   content: "";
@@ -3512,10 +3543,12 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  margin-top: 300px;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 992px) {
   .home-sec .home-item .content {
     width: 100%;
+    margin-top: 0;
   }
 }
 .home-sec .home-item .content .title {
@@ -3573,7 +3606,8 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
   position: relative;
   padding: 35px 20px;
   text-align: center;
-  background-color: #e9f9fe;
+  background-color: #fff;
+  border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
   .principles-cards .principle-card {
@@ -3604,12 +3638,13 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 .principles-cards .principle-card::after, .principles-cards .principle-card::before {
   content: "";
   position: absolute;
-  background-color: rgba(43, 195, 242, 0.2);
+  background-color: rgba(79, 122, 184, 0.9);
   width: 100px;
-  height: 6px;
-  z-index: -1;
+  height: 4px;
+  z-index: 1;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 7px;
 }
 .principles-cards .principle-card::after {
   top: -3px;
@@ -3652,7 +3687,7 @@ html[lang=ar] .footer .footer-content .footer-links .link:hover {
 }
 
 .services-card {
-  border-radius: 15px;
+  border-radius: 8px;
   overflow: hidden;
   display: block;
   background-color: white;
@@ -3898,7 +3933,7 @@ html[lang=ar] .team-card .top::after {
   object-fit: cover;
 }
 .page-header .page-info {
-  padding: 80px 0;
+  padding: 160px 0 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3906,7 +3941,7 @@ html[lang=ar] .team-card .top::after {
 }
 @media screen and (max-width: 425px) {
   .page-header .page-info {
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 25px;
   }
 }

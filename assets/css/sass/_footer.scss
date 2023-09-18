@@ -204,6 +204,8 @@
   font-size: 15px;
   color: $black;
   gap: 3px;
+  position: relative;
+  z-index: 4;
 
   @media screen and (max-width: $screen-xs) {
     font-size: 14px;

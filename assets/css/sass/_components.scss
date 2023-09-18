@@ -17,12 +17,12 @@
     border-right: 3px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    
-    @media screen and (max-width:$screen-xs) {
+
+    @media screen and (max-width: $screen-xs) {
       @include circle(80px);
     }
   }
-  
+
   @keyframes rotation {
     0% {
       transform: rotate(0deg);
@@ -30,7 +30,7 @@
     100% {
       transform: rotate(360deg);
     }
-  } 
+  }
 }
 
 .loader img {
@@ -107,7 +107,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba($color: #000000, $alpha: .7);
+  background-color: transparent;
   display: none;
   z-index: 1030;
 }
@@ -175,7 +175,7 @@
 .grid-4 {
   @include grid(240px, 25px);
 
-  @media screen and (max-width: $screen-sm) and (min-width:500px) {
+  @media screen and (max-width: $screen-sm) and (min-width: 500px) {
     @include grid(190px, 12px);
   }
 }
@@ -245,7 +245,7 @@
   width: 100%;
   height: 100%;
   z-index: -3;
-  opacity: 0.08;
+  opacity: 0.1;
 }
 
 // Drop Down
@@ -485,31 +485,29 @@
 }
 
 /********************* breadcrumb *********************/
-.breadcrumb-con{
+.breadcrumb-con {
   display: flex;
   align-items: center;
   gap: 8px;
   // margin-bottom: 25px;
-  
 
-  .breadcrumb-m{
+  .breadcrumb-m {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     font-size: 17px;
     color: $white;
-    
-    i{
+
+    i {
       font-size: 15px;
       color: $white;
 
-      #{$ltr} &{
+      #{$ltr} & {
         transform: rotate(-180deg);
       }
     }
   }
 }
-
 
 /********************* iti__selected-flag *************/
 .iti {
@@ -573,27 +571,27 @@
 
 .main-title {
   position: relative;
-  color: $sec;
+  color: $white;
   font-size: 19px;
   font-weight: 600;
   width: fit-content;
   margin: auto;
   margin-bottom: 75px;
 
-  &::after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     bottom: -14px;
     left: 50%;
     transform: translateX(-50%);
     width: 90px;
     height: 1px;
-    background-color: $sec;
+    background-color: $white;
     border-radius: 15px;
   }
 
-  &::before{
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
     bottom: -15px;
     left: 50%;
@@ -601,7 +599,7 @@
     width: 42px;
     height: 3px;
     border-radius: 15px;
-    background-color: $sec;
+    background-color: $white;
   }
 
   @media screen and (max-width: $screen-xs) {
@@ -633,7 +631,7 @@
   padding: 12px 20px;
 }
 
-.bg-rgba{
+.bg-rgba {
   background-color: #ccc5a699;
   // background-color: #e0ddc5b3;
 }
@@ -1449,7 +1447,7 @@
     font-size: 14px;
     color: $black;
     transition: $main-transition;
-    border: 1px solid rgba($color: $black, $alpha: .5);
+    border: 1px solid rgba($color: $black, $alpha: 0.5);
     background-color: $white;
 
     @media screen and (max-width: $screen-xs) {
@@ -1599,7 +1597,7 @@
 .irs--flat {
   height: 57px !important;
 
-  .irs-single{
+  .irs-single {
     background-color: transparent;
     color: $main;
     font-size: 15px;
@@ -1631,7 +1629,7 @@
       outline: none;
       font-size: 13px;
       color: $black;
-      border: 1px solid rgba($color: $black, $alpha: .5);
+      border: 1px solid rgba($color: $black, $alpha: 0.5);
       // box-shadow: $main-shadow;
 
       @media (max-width: $screen-xs) {
@@ -2046,7 +2044,7 @@
 
     ~ {
       .text1 {
-        color: $text-color;;
+        color: $text-color;
       }
       .text2 {
         color: $bink;
@@ -2710,14 +2708,16 @@
 
   .drop-text {
     font-size: 14px;
-    color: $black;
+    color: $main;
+    transition: $main-transition;
   }
 
   .drop-ic {
     max-width: 16px;
     max-height: 18px;
     font-size: 14px;
-    color: $black;
+    color: $main;
+    transition: $main-transition;
   }
 
   .drop-ic2 {

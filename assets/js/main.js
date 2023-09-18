@@ -3,6 +3,14 @@ $(window).on("load", function () {
   $(".loader").delay(300).fadeOut(1000);
 });
 
+// Header Fixed
+let header = document.querySelector(".page-navbar");
+header.classList.toggle("scroll", window.scrollY > 20);
+
+window.addEventListener("scroll", function () {
+  header.classList.toggle("scroll", window.scrollY > 20);
+});
+
 // Active Link
 $(".page-navbar .links .link").each(function () {
   $(this).removeClass("active");
@@ -165,6 +173,7 @@ $(document).ready(function () {
     margin: 10,
     autoplayTimeout: 5000,
     autoplaySpeed: 1500,
+    animateOut: "fadeOut",
     smartSpeed: 1500,
   });
 
@@ -190,8 +199,8 @@ $(document).ready(function () {
     nav: true,
     autoplay: true,
     navText: [
-      `<i class="fa-solid fa-arrow-right-long"></i>`,
-      `<i class="fa-solid fa-arrow-left-long"></i>`,
+      `<i class="fa-solid fa-hand-point-right"></i>`,
+      `<i class="fa-solid fa-hand-point-left"></i>`,
     ],
     responsive: {
       1200: {

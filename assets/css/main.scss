@@ -6,14 +6,10 @@
 .home-sec {
   .home-item {
     position: relative;
-    height: calc(100vh - 82px);
+    height: calc(100vh);
     display: flex;
     align-items: center;
     min-height: 600px;
-
-    @media screen and (max-width: $screen-lg) {
-      height: calc(100vh - 70px);
-    }
 
     &::after {
       content: "";
@@ -41,9 +37,11 @@
       display: flex;
       flex-direction: column;
       gap: 25px;
+      margin-top: 300px;
 
-      @media screen and (max-width: $screen-sm) {
+      @media screen and (max-width: $screen-lg) {
         width: 100%;
+        margin-top: 0;
       }
 
       .title {
@@ -62,6 +60,7 @@
       .desc {
         font-size: 16px;
         color: $white;
+        // text-align: center;
 
         @media screen and (max-width: $screen-xs) {
           font-size: 15px;
@@ -106,7 +105,9 @@
     padding: 35px 20px;
     text-align: center;
     // background-color: rgba($color: $bink, $alpha: 0.1);
-    background-color: #e9f9fe;
+    // background-color: #e9f9fe;
+    background-color: #fff;
+    border-radius: 5px;
 
     @media screen and (max-width: $screen-md) {
       padding: 35px 15px;
@@ -137,12 +138,13 @@
     &::before {
       content: "";
       position: absolute;
-      background-color: rgba($color: $bink, $alpha: 0.2);
+      background-color: rgba($color: $sec, $alpha: 0.9);
       width: 100px;
-      height: 6px;
-      z-index: -1;
+      height: 4px;
+      z-index: 1;
       left: 50%;
       transform: translateX(-50%);
+      border-radius: 7px;
     }
 
     &::after {
@@ -187,7 +189,7 @@
 }
 
 .services-card {
-  border-radius: 15px;
+  border-radius: 8px;
   overflow: hidden;
   display: block;
   background-color: rgba($color: $white, $alpha: 1);
@@ -466,13 +468,13 @@
   }
 
   .page-info {
-    padding: 80px 0;
+    padding: 160px 0 60px;
     // padding-bottom: 40px;
     @include center;
     flex-direction: column;
 
     @media screen and (max-width: $screen-xs) {
-      padding-top: 80px;
+      padding-top: 120px;
       padding-bottom: 25px;
     }
 
@@ -756,23 +758,22 @@
 }
 /********************* End get-quote section *********************/
 
-
 /********************* Start services-detailes section *********************/
-.services-detailes-con{
+.services-detailes-con {
   display: flex;
   align-items: start;
   justify-content: space-between;
   gap: 45px;
 
-  @media screen and (max-width:$screen-lg) {
+  @media screen and (max-width: $screen-lg) {
     flex-direction: column;
     align-items: center;
   }
 
-  .detailes-right{
+  .detailes-right {
     width: 100%;
 
-    .small-title{
+    .small-title {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -782,7 +783,7 @@
       width: fit-content;
       color: $white;
       font-size: 15px;
-      
+
       #{$ltr} & {
         padding: 10px 25px 10px 15px;
       }
@@ -791,19 +792,19 @@
       }
     }
 
-    .detailes-title{
+    .detailes-title {
       font-size: 24px;
       color: $black;
       margin-bottom: 18px;
     }
 
-    .desc{
+    .desc {
       font-size: 16px;
       color: $black;
       line-height: 2;
       font-weight: 600;
 
-      @media screen and (max-width:$screen-xs) {
+      @media screen and (max-width: $screen-xs) {
         font-weight: 400;
         font-size: 15px;
         line-height: 1.8;
@@ -811,12 +812,11 @@
     }
   }
 
-
-  .detailes-img{
+  .detailes-img {
     position: relative;
 
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -827,18 +827,18 @@
       z-index: 2;
     }
 
-    .img{
+    .img {
       width: 400px;
       height: 340px;
       border-radius: 15px;
       object-fit: cover;
 
-      @media screen and (max-width:$screen-sm) {
+      @media screen and (max-width: $screen-sm) {
         width: 340px;
         height: 300px;
       }
 
-      @media screen and (max-width:$screen-xxs) {
+      @media screen and (max-width: $screen-xxs) {
         width: 260px;
         height: 260px;
       }
